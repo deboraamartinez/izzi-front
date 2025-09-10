@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match Izzi branding book colors */
+  --background: #f3f2ed; /* Izzi cream background */
+  --foreground: #2c3949; /* Izzi dark blue text */
+  --card: #ffffff; /* White cards */
+  --card-foreground: #2c3949; /* Dark blue card text */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #2c3949; /* Dark blue popover text */
+  --primary: #4d5c6b; /* Izzi medium blue */
+  --primary-foreground: #f3f2ed; /* Cream on primary */
+  --secondary: #859db9; /* Izzi light blue */
+  --secondary-foreground: #2c3949; /* Dark blue on secondary */
+  --muted: #859db9; /* Light blue muted */
+  --muted-foreground: #4d5c6b; /* Medium blue muted text */
+  --accent: #d3b16f; /* Izzi gold accent */
+  --accent-foreground: #2c3949; /* Dark blue on accent */
+  --destructive: #983332; /* Izzi red */
+  --destructive-foreground: #f3f2ed; /* Cream on destructive */
+  --border: #859db9; /* Light blue borders */
+  --input: #ffffff; /* White inputs */
+  --ring: #4d5c6b; /* Medium blue focus rings */
+  --chart-1: #4d5c6b; /* Primary chart color */
+  --chart-2: #859db9; /* Secondary chart color */
+  --chart-3: #d3b16f; /* Tertiary chart color */
+  --chart-4: #69744d; /* Green chart color */
+  --chart-5: #983332; /* Red chart color */
+  --radius: 0.5rem;
+  --sidebar: #2c3949; /* Dark blue sidebar */
+  --sidebar-foreground: #f3f2ed; /* Cream sidebar text */
+  --sidebar-primary: #4d5c6b; /* Medium blue sidebar primary */
+  --sidebar-primary-foreground: #f3f2ed; /* Cream sidebar primary text */
+  --sidebar-accent: #859db9; /* Light blue sidebar accent */
+  --sidebar-accent-foreground: #2c3949; /* Dark blue sidebar accent text */
+  --sidebar-border: #4d5c6b; /* Medium blue sidebar border */
+  --sidebar-ring: #d3b16f; /* Gold sidebar focus ring */
+}
+
+.dark {
+  --background: #2c3949;
+  --foreground: #f3f2ed;
+  --card: #4d5c6b;
+  --card-foreground: #f3f2ed;
+  --popover: #4d5c6b;
+  --popover-foreground: #f3f2ed;
+  --primary: #859db9;
+  --primary-foreground: #2c3949;
+  --secondary: #4d5c6b;
+  --secondary-foreground: #f3f2ed;
+  --muted: #4d5c6b;
+  --muted-foreground: #859db9;
+  --accent: #d3b16f;
+  --accent-foreground: #2c3949;
+  --destructive: #983332;
+  --destructive-foreground: #f3f2ed;
+  --border: #4d5c6b;
+  --input: #4d5c6b;
+  --ring: #859db9;
+  --chart-1: #859db9;
+  --chart-2: #d3b16f;
+  --chart-3: #69744d;
+  --chart-4: #983332;
+  --chart-5: #54422c;
+  --sidebar: #2c3949;
+  --sidebar-foreground: #f3f2ed;
+  --sidebar-primary: #859db9;
+  --sidebar-primary-foreground: #2c3949;
+  --sidebar-accent: #4d5c6b;
+  --sidebar-accent-foreground: #f3f2ed;
+  --sidebar-border: #4d5c6b;
+  --sidebar-ring: #d3b16f;
+}
+
+@theme inline {
+  /* Updated font variables to use Izzi branding fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-light;
+  }
+
+  /* Custom typography classes for Izzi branding */
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
+
+  .font-light {
+    font-weight: 300;
+  }
+
+  .font-normal {
+    font-weight: 400;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  button,
+  a {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Custom animations for floating elements */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom texture overlay for images as per branding requirements */
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    repeat;
+  pointer-events: none;
+  z-index: 1;
+}
